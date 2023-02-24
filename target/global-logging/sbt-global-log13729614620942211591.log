@@ -1,0 +1,13 @@
+[debug] > Exec(Main.scala, None, None)
+[error] Expected ID character
+[error] Not a valid command: Main (similar: alias)
+[error] Expected project ID
+[error] Expected configuration
+[error] Expected ':'
+[error] Expected configuration ident
+[error] Expected '/'
+[error] Expected key
+[error] Not a valid key: Main (similar: runMain, bgRunMain, fgRunMain)
+[error] Main.scala
+[error]     ^
+[debug] > Exec(idea-shell, None, None)
