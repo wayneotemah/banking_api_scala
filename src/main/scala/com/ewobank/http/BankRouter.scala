@@ -22,6 +22,7 @@ case class BankAccountUpdatedRequest(currency: String,ammount: Double){
   def toCommand(id:String,replyTo:ActorRef[Response]): Command = UpdateAccount(id,currency,ammount,replyTo)
 }
 case class FailureResponse(reason: String)
+case class SuccessResponse(response: String)
 
 class BankRouter(bank:ActorRef[Command])(implicit system: ActorSystem[_]) {
 
@@ -66,7 +67,7 @@ class BankRouter(bank:ActorRef[Command])(implicit system: ActorSystem[_]) {
               // - send back an hhp response
               case BankAccountCreatedResponse(id) =>
                 respondWithHeader(Location(s"/bank/$id")){
-                  complete(201)
+                  complete(201,SuccessResponse(s"$id"))
                 }
             }
           }

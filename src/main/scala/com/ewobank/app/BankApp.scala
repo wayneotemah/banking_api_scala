@@ -21,7 +21,7 @@ object BankApp {
     val router = new BankRouter(bank)
     val routes = router.routes
 
-    val httpBindinfFuture = Http().newServerAt("localhost",8080).bind(routes)
+    val httpBindinfFuture = Http().newServerAt("localhost",8081).bind(routes)
     httpBindinfFuture.onComplete{
       case Success(binding)=>
         val address = binding.localAddress
