@@ -17,10 +17,7 @@ object Bank {
   import PersistantUserAccount.Command._
   import PersistantUserAccount.Response._
   import PersistantUserAccount.Command
-
-
-//  events
-
+  
 //  events
   sealed trait Event
   case class BankAccountCreated(id:String) extends Event

@@ -13,6 +13,6 @@ class MyScalaUser(HttpUser):
                 'currency': 'KSH',
                 'balance': random.randint(0, 10000)
                 }
-        self.client.post("bank/", json=data, headers=headers)
+        self.client.post("/bank/", json=data, headers=headers)
 
 # locust -f my_test.py --headless --users 1000 --spawn-rate 1000 --host=http://127.0.0.1:8081 run command
